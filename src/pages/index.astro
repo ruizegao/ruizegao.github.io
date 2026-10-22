@@ -1,0 +1,70 @@
+---
+// The home page. Content comes from the YAML files in src/data/;
+// this file only arranges it.
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import Publication from '../components/Publication.astro';
+import { load, inline, obfuscate, initials } from '../lib/data.js';
+
+const profile = load('profile');
+const pubs = load('publications');
+const news = load('news');
+const links = (profile.links ?? []).filter((l) => l.url);
+const year = new Date().getFullYear();
+const updated = new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
+const description = `${profile.name} — ${profile.tagline}`;
+---
+<Base title={profile.name} description={description} image={profile.photo ? `/images/${profile.photo}` : undefined}>
+  <main class="page">
+    <header class="header">
+      {profile.photo
+        ? <img class="portrait" src={`/images/${profile.photo}`} alt={`Portrait of ${profile.name}`} />
+        : <div class="portrait" aria-hidden="true">{initials(profile.name)}</div>}
+      <div class="identity">
+        <h1>{profile.name}</h1>
+        <div class="tagline mono">{profile.tagline}</div>
+        {links.length > 0 && (
+          <nav class="mono" aria-label="Links">
+            {links.map((l) => <a href={l.url}>{l.label}</a>)}
+          </nav>
+        )}
+      </div>
+    </header>
+
+    <Hero hero={profile.hero} />
+
+    <section class="section">
+      <h2>About</h2>
+      <div class="body lede">
+        {profile.about.map((p) => <p set:html={inline(p)} />)}
+      </div>
+    </section>
+
+    {news.length > 0 && (
+      <section class="section">
+        <h2>News</h2>
+        <div class="body">
+          <ul class="news">
+            {news.map((n) => (
+              <li><time class="mono">{String(n.date)}</time><span set:html={inline(n.text)} /></li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
+
+    {pubs.length > 0 && (
+      <section class="section">
+        <h2>Publications</h2>
+        <div class="body pubs">
+          {pubs.map((pub) => <Publication pub={pub} me={profile.name} />)}
+        </div>
+      </section>
+    )}
+
+    <footer class="footer mono">
+      <span>{obfuscate(profile.email)}</span>
+      <span>© {year} {profile.name} · updated {updated}</span>
+    </footer>
+  </main>
+</Base>

@@ -1,0 +1,46 @@
+# ─────────────────────────────────────────────────────────────
+#  Everything about you lives here. Edit, save, and the site
+#  rebuilds. Links use Markdown style: [text](https://...)
+#  *single asterisks* make italics.
+# ─────────────────────────────────────────────────────────────
+
+name: Ruize Gao
+tagline: PhD student · Simon Fraser University · Burnaby, BC
+
+# Put a square-ish photo in public/images/ and write its name here.
+# Leave empty ("") to show your initials instead.
+photo: ""
+
+# Shown as "you [at] domain [dot] tld" to slow down scrapers.
+email: "YOUR_SFU_ID@sfu.ca"
+
+links:
+  - label: cv
+    url: ""          # e.g. /cv.pdf after you put cv.pdf in public/
+  - label: scholar
+    url: ""          # your Google Scholar profile URL
+  - label: github
+    url: https://github.com/ruizegao
+
+about:
+  - >-
+    I'm a PhD student in Computing Science at Simon Fraser University,
+    advised by [Linyi Li](https://cs.sfu.ca/~linyi/) in the
+    [TAI Lab](https://sfu-tai.github.io/). Before that, I did my MS at
+    UIUC with [Huan Zhang](https://www.huan-zhang.com/).
+  - >-
+    My work moves between computer graphics, computer vision, and
+    neural network verification.
+  # Replace this with a sentence or two in your own voice.
+  # Delete the line entirely if you'd rather leave it out for now.
+  - "*[What question do you care about most right now?]*"
+
+# ── The figure at the top of the page ────────────────────────
+# type: piece  → an interactive piece from src/pieces/ (by file name)
+# type: image  → a still image from public/images/
+# type: video  → a looping .mp4 from public/images/ (no sound)
+# type: none   → no figure
+hero:
+  type: piece
+  src: adaptive-grid
+  caption: "fig. 0 — adaptive subdivision following your cursor. A placeholder until there's research to show here."

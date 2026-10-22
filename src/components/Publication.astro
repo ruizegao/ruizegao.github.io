@@ -1,0 +1,34 @@
+---
+// One entry in the publication list. Data comes from src/data/publications.yaml.
+import { inline } from '../lib/data.js';
+
+const { pub, me } = Astro.props;
+
+// Bold your own name in the author list (handles a trailing * for co-first).
+const escapeRe = (s) => s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+// A trailing * marks co-first authors; show it as ∗ so it isn't read as italics.
+const authors = inline(pub.authors.replace(/\*/g, '∗')).replace(
+  new RegExp(`(${escapeRe(me)}∗?)`),
+  '<strong>$1</strong>'
+);
+const links = Object.entries(pub.links ?? {}).filter(([, url]) => url);
+---
+<article class="pub">
+  {pub.image && <img class="pub-figure" src={`/images/${pub.image}`} alt="" loading="lazy" />}
+  <div class="pub-text">
+    <h3>{pub.title}</h3>
+    <div class="authors" set:html={authors} />
+    {pub.venue && <div class="venue">{pub.venue}</div>}
+    {(links.length > 0 || pub.bibtex) && (
+      <div class="pub-links mono">
+        {links.map(([label, url]) => <a href={url}>{label}</a>)}
+        {pub.bibtex && (
+          <details>
+            <summary>bibtex</summary>
+            <pre class="bibtex">{pub.bibtex.trim()}</pre>
+          </details>
+        )}
+      </div>
+    )}
+  </div>
+</article>

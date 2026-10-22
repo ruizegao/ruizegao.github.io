@@ -1,0 +1,26 @@
+# ─────────────────────────────────────────────────────────────
+#  Publications, newest first. While this list is empty, the
+#  Publications section is hidden.
+#
+#  Copy the example below, remove the leading "# " from each line,
+#  and fill it in. Write your own name exactly as in `profile.yaml`
+#  and it'll be bolded automatically. Mark co-first authors with *.
+#
+#  - title: "Paper Title"
+#    authors: "Ruize Gao, Co Author, Another Author"
+#    venue: "CVPR 2027"
+#    image: teaser-paper.jpg     # in public/images/, optional
+#    links:
+#      paper: https://arxiv.org/abs/...
+#      code: https://github.com/ruizegao/...
+#      project: /projects/paper-name/
+#    bibtex: |
+#      @inproceedings{gao2027paper,
+#        title={Paper Title},
+#        author={Gao, Ruize and Author, Co},
+#        booktitle={CVPR},
+#        year={2027}
+#      }
+# ─────────────────────────────────────────────────────────────
+
+[]

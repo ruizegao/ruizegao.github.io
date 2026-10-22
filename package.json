@@ -1,0 +1,14 @@
+{
+  "name": "ruizegao.github.io",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview"
+  },
+  "dependencies": {
+    "astro": "^7.4.1",
+    "js-yaml": "^5.5.0"
+  }
+}

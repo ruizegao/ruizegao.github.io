@@ -1,0 +1,32 @@
+---
+// The figure slot at the top of the page. What it shows is decided by
+// `hero:` in src/data/profile.yaml — this file rarely needs editing.
+const { hero } = Astro.props;
+const type = hero?.type ?? 'none';
+---
+{type !== 'none' && (
+  <figure class="hero">
+    <div class="hero-frame">
+      {type === 'piece' && (
+        <canvas data-piece={hero.src} role="img" aria-label={hero.caption ?? 'Interactive figure'}></canvas>
+      )}
+      {type === 'image' && <img src={`/images/${hero.src}`} alt={hero.caption ?? ''} />}
+      {type === 'video' && (
+        <video src={`/images/${hero.src}`} autoplay muted loop playsinline aria-label={hero.caption ?? ''}></video>
+      )}
+    </div>
+    {hero.caption && <figcaption class="mono">{hero.caption}</figcaption>}
+  </figure>
+)}
+
+<script>
+  // Every file in src/pieces/ is an interactive piece. Each one exports
+  // a default function that receives a <canvas> and draws into it.
+  // Only the piece actually used on the page gets downloaded.
+  const pieces = import.meta.glob('../pieces/*.js');
+  for (const canvas of document.querySelectorAll<HTMLCanvasElement>('canvas[data-piece]')) {
+    const load = pieces[`../pieces/${canvas.dataset.piece}.js`];
+    if (load) load().then((m: any) => m.default(canvas));
+    else console.warn(`No piece named "${canvas.dataset.piece}" in src/pieces/`);
+  }
+</script>
