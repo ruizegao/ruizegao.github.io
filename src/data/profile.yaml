@@ -33,7 +33,7 @@ about:
     neural network verification.
   # Replace this with a sentence or two in your own voice.
   # Delete the line entirely if you'd rather leave it out for now.
-  - "*[What question do you care about most right now?]*"
+  - ""
 
 # ── The figure at the top of the page ────────────────────────
 # type: piece  → an interactive piece from src/pieces/ (by file name)
@@ -43,4 +43,4 @@ about:
 hero:
   type: piece
   src: adaptive-grid
-  caption: "fig. 0 — adaptive subdivision following your cursor. A placeholder until there's research to show here."
+  caption: ""
