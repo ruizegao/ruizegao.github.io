@@ -30,7 +30,7 @@ about:
     UIUC with [Huan Zhang](https://www.huan-zhang.com/).
   - >-
     My work moves between computer graphics, computer vision, and
-    neural network verification.
+    neural network verification. I am interested in connecting machine/deep learning with geometric representations for applications such as rendering and simulation.
   # Replace this with a sentence or two in your own voice.
   # Delete the line entirely if you'd rather leave it out for now.
   - ""
@@ -43,4 +43,4 @@ about:
 hero:
   type: piece
   src: adaptive-grid
-  caption: ""
+  caption: "Adaptive grid that refines the region near your cursor. Give it a try!"

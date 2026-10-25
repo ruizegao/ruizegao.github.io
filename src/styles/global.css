@@ -184,7 +184,7 @@ a:hover { color: var(--link-hover); }
 /* ── News ───────────────────────────────────────────────── */
 .news { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
 .news li { display: flex; gap: 20px; font-size: 18px; }
-.news time { flex: 0 0 64px; color: var(--muted); padding-top: 3px; }
+.news time { flex: 0 0 120px; color: var(--muted); padding-top: 3px; }
 
 /* ── Footer ─────────────────────────────────────────────── */
 .footer {

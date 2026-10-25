@@ -9,6 +9,7 @@ import { load, inline, obfuscate, initials } from '../lib/data.js';
 const profile = load('profile');
 const pubs = load('publications');
 const news = load('news');
+const education = load('education');
 const links = (profile.links ?? []).filter((l) => l.url);
 const year = new Date().getFullYear();
 const updated = new Date().toLocaleDateString('en-US', { month: 'short', year: 'numeric' });
@@ -39,6 +40,25 @@ const description = `${profile.name} — ${profile.tagline}`;
         {profile.about.map((p) => <p set:html={inline(p)} />)}
       </div>
     </section>
+
+    {education.length > 0 && (
+      <section class="section">
+        <h2>Education</h2>
+        <div class="body">
+          <ul class="news">
+            {education.map((e) => (
+              <li>
+                <time class="mono">{String(e.years)}</time>
+                <span>
+                  {e.degree}, <span set:html={inline(e.school)} />
+                  {e.note && <> · <span set:html={inline(e.note)} /></>}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </section>
+    )}
 
     {news.length > 0 && (
       <section class="section">

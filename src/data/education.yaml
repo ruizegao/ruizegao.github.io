@@ -1,0 +1,16 @@
+# ─────────────────────────────────────────────────────────────
+#  Education, newest first. Hidden while empty.
+#  Fields: years, degree, school (Markdown links allowed), note (optional)
+# ─────────────────────────────────────────────────────────────
+
+- years: 2026-09 – present
+  degree: PhD, Computing Science
+  school: "[Simon Fraser University](https://www.sfu.ca/)"
+  note: Advisor [Linyi Li](https://cs.sfu.ca/~linyi/)
+- years: "2024-08 – 2026-05"
+  degree: MS, Computer Science
+  school: "[University of Illinois Urbana-Champaign](https://illinois.edu/)"
+  note: Advisor [Huan Zhang](https://www.huan-zhang.com/)
+- years: "2020-08 – 2024-05"
+  degree: BS, System Engineering
+  school: "[University of Illinois Urbana-Champaign](https://illinois.edu/)"
