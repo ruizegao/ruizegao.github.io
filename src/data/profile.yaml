@@ -9,7 +9,7 @@ tagline: PhD student · Simon Fraser University · Burnaby, BC
 
 # Put a square-ish photo in public/images/ and write its name here.
 # Leave empty ("") to show your initials instead.
-photo: ""
+photo: "me.jpg"
 
 # Shown as "you [at] domain [dot] tld" to slow down scrapers.
 email: "rga125@sfu.ca"
